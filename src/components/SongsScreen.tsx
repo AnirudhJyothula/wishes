@@ -10,9 +10,9 @@ export const SongsScreen: React.FC<SongsScreenProps> = ({ onNavigateHome }) => {
   const audioRefs = useRef<(HTMLAudioElement | null)[]>([]);
 
   const songs = [
-    { title: "You Are the Reason", caption: "Because you truly were.", audioFile: "/songs for you/sita.mp3" },
-    { title: "Perfect", caption: "Because I imagined our first dance.", audioFile: "/songs for you/Kumkumala.mp3" },
-    { title: "Dream", caption: "Because you made life beautiful.", audioFile: "/songs for you/PremaVelluva.mp3" }
+    { title: "You Are the Reason", caption: "Because you truly were.", audioFile: `${process.env.PUBLIC_URL}/songs for you/sita.mp3` },
+    { title: "Perfect", caption: "Because I imagined our first dance.", audioFile: `${process.env.PUBLIC_URL}/songs for you/Kumkumala.mp3` },
+    { title: "Dream", caption: "Because you made life beautiful.", audioFile: `${process.env.PUBLIC_URL}/songs for you/PremaVelluva.mp3` }
   ];
 
   const handlePlayPause = (index: number) => {
@@ -29,7 +29,6 @@ export const SongsScreen: React.FC<SongsScreenProps> = ({ onNavigateHome }) => {
         audioRefs.current[currentlyPlaying]!.pause();
         audioRefs.current[currentlyPlaying]!.currentTime = 0;
       }
-      
       // Play new song
       audio.play().catch(console.error);
       setCurrentlyPlaying(index);
@@ -71,7 +70,6 @@ export const SongsScreen: React.FC<SongsScreenProps> = ({ onNavigateHome }) => {
                   preload="metadata"
                 />
               )}
-              
               <div className="flex items-center gap-4">
                 <button
                   onClick={() => handlePlayPause(index)}
