@@ -512,7 +512,7 @@ Forever yours in a heart that never stopped loving,
           {/* Photo 1 */}
           <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src={`${process.env.PUBLIC_URL}/image.png`} 
+              src="/wishes/image.png"
               alt="Memory" 
               className="w-full h-50 object-cover rounded-lg mb-4"
             />
@@ -524,7 +524,7 @@ Forever yours in a heart that never stopped loving,
           {/* Photo 2 */}
           <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src={`${process.env.PUBLIC_URL}/myfavourite.png`} 
+              src="/wishes/myfavourite.png"
               alt="Memory" 
               className="w-full h-50 object-cover rounded-lg mb-4"
             />
@@ -536,7 +536,7 @@ Forever yours in a heart that never stopped loving,
           {/* Photo 3 */}
           <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src={`${process.env.PUBLIC_URL}/art.png`} 
+              src="/wishes/art.png"
               alt="Memory" 
               className="w-full h-50 object-cover rounded-lg mb-4"
             />
@@ -548,7 +548,7 @@ Forever yours in a heart that never stopped loving,
           {/* Photo 4 */}
           <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src={`${process.env.PUBLIC_URL}/coldnights.png`} 
+              src="/wishes/coldnights.png"
               alt="Memory" 
               className="w-full h-50 object-cover rounded-lg mb-4"
             />
