@@ -329,127 +329,207 @@ Forever yours in a heart that never stopped loving,
   );
 
   const HomeScreen = () => (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 p-4 sm:p-6">
-      <div className="max-w-md md:max-w-4xl lg:max-w-6xl mx-auto">
-        {/* Main message */}
-        <div className="mb-8 pt-8 text-center">
-          <h2 className="text-2xl sm:text-3xl leading-relaxed mb-4 text-gray-800 transform -rotate-1 relative" style={{ 
-            fontFamily: 'Kalam, cursive',
-            textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
-            letterSpacing: '0.5px'
-          }}>
-            {/* Highlight background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-200/60 via-pink-200/60 to-purple-200/60 rounded-lg blur-sm -z-10 transform scale-105"></div>
-            
-            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent relative z-10">
-              Hi... I know this is unexpected.
-            </span>
-            <br />
-            <span className="inline-block transform rotate-1 mt-2 relative z-10">
-              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                But I've carried this for years.
-              </span>
-            </span>
-            <br />
-            <span className="inline-block transform -rotate-0.5 mt-2 relative z-10">
-              <span className="bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 bg-clip-text text-transparent">
-                Let me show you what I never could.
-              </span>
-            </span>
-          </h2>
+    <div className="min-h-screen bg-gradient-to-br from-rose-900 via-purple-900 to-indigo-900 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        {/* Floating hearts */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute text-white/10 animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${8 + Math.random() * 4}s`,
+                fontSize: `${20 + Math.random() * 16}px`
+              }}
+            >
+              💕
+            </div>
+          ))}
         </div>
         
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          <MobileCard
-            image="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=400"
-            icon="❤️"
-            title="Our Journey"
-            subtitle="The story I lived in silence"
-            description="Tap and hold to open"
-            onClick={() => navigateToSection('journey')}
-          />
+        {/* Sparkles */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={`sparkle-${i}`}
+              className="absolute text-white/20 animate-twinkle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 3}s`,
+                fontSize: `${8 + Math.random() * 8}px`
+              }}
+            >
+              ✨
+            </div>
+          ))}
+        </div>
+        
+        {/* Gradient orbs */}
+        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-10 w-48 h-48 bg-gradient-to-r from-rose-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+      </div>
+      
+      <div className="relative z-10 min-h-screen flex flex-col p-4 sm:p-6">
+        <div className="max-w-6xl mx-auto flex-1 flex flex-col">
+          {/* Header section */}
+          <div className="text-center pt-8 pb-12">
+            {/* Main romantic message */}
+            <div className="mb-12">
+              <div className="relative inline-block">
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-purple-400/30 rounded-2xl blur-xl"></div>
+                <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight tracking-wide mb-6" style={{ 
+                  fontFamily: 'Kalam, cursive',
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
+                }}>
+                  <span className="block bg-gradient-to-r from-pink-200 via-rose-200 to-purple-200 bg-clip-text text-transparent">
+                    My Heart's
+                  </span>
+                  <span className="block bg-gradient-to-r from-purple-200 via-pink-200 to-rose-200 bg-clip-text text-transparent">
+                    Silent Story
+                  </span>
+                </h1>
+              </div>
+              
+              <div className="max-w-3xl mx-auto space-y-4">
+                <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-light italic leading-relaxed">
+                  "Some love stories are written in silence..."
+                </p>
+                <p className="text-base sm:text-lg text-white/70 font-light">
+                  This is mine — carried in my heart for years, finally finding its voice.
+                </p>
+              </div>
+            </div>
+          </div>
           
-          <MobileCard
-            image="https://lh3.googleusercontent.com/aida-public/AB6AXuDiSdGeobQVEjbqmWZx2ZjMUHZnak1ZKY0rSkV2yyw155rQghK0_s-Cd2FrJ1yfWYgB1-fsxgRfNK_IiQ3w--ayaJQu_TnZSMlPwRwHc8JhDHF5tmg7rKJMBq2CUQwa6ljEBR88lEwAbiM7lHCqOXDNErBWQL_I35JjEe_s9Pui3KJPDV0TxFkg1I4ifY5vA832RUSJbHqLsgt8sBKuHUxxRvcEG6TTRXtfAqq0x7r1LBUPdBTFFAhh7KEVrZeZ5ez83FSx35KTAyQ"
-            icon="📖"
-            title="Photo Memories"
-            subtitle="Moments that never faded"
-            description="Tap and hold to open"
-            onClick={() => navigateToSection('photos')}
-          />
-          
-          <MobileCard
-            image="https://lh3.googleusercontent.com/aida-public/AB6AXuBwCtw-ghf8WEBY4m86k0WiPehV1areB-w5sNrYqJMPu5OhtDDgFpsOWRcFG5LL5kwZamIbLgP7lptT2ivQe8rgUt2jyHIL0PwzIHpBc3hhZcPSkLtVTUN7jXqa-9TrAAXn9yP7q_5dDXAdoUq9ro0nTn6J86KwwhG3xZdy5XWCRH9MtanBGZyBsVDyRZ3iNiJU22I3Mb4Km_cVuo1sWKw4qf0C7CUSMS5SMypLs27cCukiF0klKJY1NSgbZRyJ7HP1H-fNrfUAOEU"
-            icon="🎵"
-            title="Songs for You"
-            subtitle=""
-            description="Tap and hold to open"
-            onClick={() => navigateToSection('songs')}
-          />
-          
-          <MobileCard
-            image="https://lh3.googleusercontent.com/aida-public/AB6AXuALakmgiJDV8jtjnY3I6BGYrjg9o0d0xsOpXXMgSHvUS4pYallM4j92YAYmADKNey4qJ9lhaBq6nuyuyAyThoOpGPRhZQlqqKs44vFHIHdPj277f3tWO4wb3LbXEIlh50W_FBkRAhRZaWY2a2rS07rS7lQH4hojfBJaFulbgOYInc_lD7qq91COBksMucOkSt_uYTv32qpsbj0ezhRxYW6sHAUn_nDrVYY9gUcoanT3zLDrPNfNpOuHUKKqKKMajyZTOaaOGyU0Xp0"
-            icon="💌"
-            title="A Letter"
-            subtitle="Everything I never dared to say"
-            description="Tap and hold to open"
-            onClick={() => navigateToSection('letter')}
-          />
-          
-          <MobileCard
-            image="https://lh3.googleusercontent.com/aida-public/AB6AXuDPDQ1ZghZhXL215llQ5hhS4bOgzDbtToeC2qBwRne-btmlfyIsabkkO4jCjT58uArPkSMMmb0qcqDk1CgMdtWXSjl-KwXTXrAADvqatabJ2QhyB5QkFYXlN3jnfwCJ42wkkrewDaWvjWRH6lk22fkjSLEiRBFoTM72P4cG2JfQucCXFhemqweuHaxdPOoDTFbf6eN4IP5OeqWbhNiSAxK6F3kRWbzXyu4IdGd7chrbiUgeoWWAecufrfzQhJi41be3td0IJisRH5g"
-            icon="🎂"
-            title="Birthday Countdown"
-            subtitle="Her Day, Always"
-            description="Tap and hold to open"
-            onClick={() => navigateToSection('birthday')}
-          />
-          
-          <MobileCard
-            image="https://lh3.googleusercontent.com/aida-public/AB6AXuAxC2YT6I0e6hHVVhGBNw5xyy8-cnYy_Q4Q0h8Nb48wHHaQQFE_LIUmIPGQqwxlgzT_7Vxg1qS-HtsopVrRQ001QP20VAgGY0CDgQi9qBaRhROolEgi1-tz_v5oCBCp4CbI6TBksjUGDOayf7mIMPQV1POABck7GBOkRFaeG-5k7umOihYjtRqq2zJVXlv2MyQyjUUn4rLLuRPIMkZjWXW1ffOVfx7rVikcCquw_i5SoGPJIVB0cHNNL3oEZaF6GqO5xHARkp0edTw"
-            icon="🎁"
-            title="The Surprise"
-            subtitle="For the next life, maybe..."
-            description="Tap and hold to open"
-            onClick={() => navigateToSection('surprise')}
-          />
+          {/* Cards section */}
+          <div className="flex-1 flex items-center justify-center">
+            <div className="w-full max-w-7xl">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <RomanticCard
+                  image="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  icon="💕"
+                  title="Our Journey"
+                  subtitle="The story I lived in silence"
+                  description="Every moment I treasured"
+                  onClick={() => navigateToSection('journey')}
+                  gradient="from-rose-500/20 to-pink-500/20"
+                />
+                
+                <RomanticCard
+                  image="https://lh3.googleusercontent.com/aida-public/AB6AXuDiSdGeobQVEjbqmWZx2ZjMUHZnak1ZKY0rSkV2yyw155rQghK0_s-Cd2FrJ1yfWYgB1-fsxgRfNK_IiQ3w--ayaJQu_TnZSMlPwRwHc8JhDHF5tmg7rKJMBq2CUQwa6ljEBR88lEwAbiM7lHCqOXDNErBWQL_I35JjEe_s9Pui3KJPDV0TxFkg1I4ifY5vA832RUSJbHqLsgt8sBKuHUxxRvcEG6TTRXtfAqq0x7r1LBUPdBTFFAhh7KEVrZeZ5ez83FSx35KTAyQ"
+                  icon="📸"
+                  title="Photo Memories"
+                  subtitle="Moments that never faded"
+                  description="Pictures worth a thousand dreams"
+                  onClick={() => navigateToSection('photos')}
+                  gradient="from-purple-500/20 to-indigo-500/20"
+                />
+                
+                <RomanticCard
+                  image="https://lh3.googleusercontent.com/aida-public/AB6AXuBwCtw-ghf8WEBY4m86k0WiPehV1areB-w5sNrYqJMPu5OhtDDgFpsOWRcFG5LL5kwZamIbLgP7lptT2ivQe8rgUt2jyHIL0PwzIHpBc3hhZcPSkLtVTUN7jXqa-9TrAAXn9yP7q_5dDXAdoUq9ro0nTn6J86KwwhG3xZdy5XWCRH9MtanBGZyBsVDyRZ3iNiJU22I3Mb4Km_cVuo1sWKw4qf0C7CUSMS5SMypLs27cCukiF0klKJY1NSgbZRyJ7HP1H-fNrfUAOEU"
+                  icon="🎵"
+                  title="Songs for You"
+                  subtitle="Melodies of my heart"
+                  description="The soundtrack to my feelings"
+                  onClick={() => navigateToSection('songs')}
+                  gradient="from-pink-500/20 to-rose-500/20"
+                />
+                
+                <RomanticCard
+                  image="https://lh3.googleusercontent.com/aida-public/AB6AXuALakmgiJDV8jtjnY3I6BGYrjg9o0d0xsOpXXMgSHvUS4pYallM4j92YAYmADKNey4qJ9lhaBq6nuyuyAyThoOpGPRhZQlqqKs44vFHIHdPj277f3tWO4wb3LbXEIlh50W_FBkRAhRZaWY2a2rS07rS7lQH4hojfBJaFulbgOYInc_lD7qq91COBksMucOkSt_uYTv32qpsbj0ezhRxYW6sHAUn_nDrVYY9gUcoanT3zLDrPNfNpOuHUKKqKKMajyZTOaaOGyU0Xp0"
+                  icon="💌"
+                  title="A Letter"
+                  subtitle="Everything I never dared to say"
+                  description="Words from the depths of my soul"
+                  onClick={() => navigateToSection('letter')}
+                  gradient="from-indigo-500/20 to-purple-500/20"
+                />
+                
+                <RomanticCard
+                  image="https://lh3.googleusercontent.com/aida-public/AB6AXuDPDQ1ZghZhXL215llQ5hhS4bOgzDbtToeC2qBwRne-btmlfyIsabkkO4jCjT58uArPkSMMmb0qcqDk1CgMdtWXSjl-KwXTXrAADvqatabJ2QhyB5QkFYXlN3jnfwCJ42wkkrewDaWvjWRH6lk22fkjSLEiRBFoTM72P4cG2JfQucCXFhemqweuHaxdPOoDTFbf6eN4IP5OeqWbhNiSAxK6F3kRWbzXyu4IdGd7chrbiUgeoWWAecufrfzQhJi41be3td0IJisRH5g"
+                  icon="🎂"
+                  title="Birthday Countdown"
+                  subtitle="Her Day, Always"
+                  description="Celebrating the day you graced this world"
+                  onClick={() => navigateToSection('birthday')}
+                  gradient="from-yellow-500/20 to-orange-500/20"
+                />
+                
+                <RomanticCard
+                  image="https://lh3.googleusercontent.com/aida-public/AB6AXuAxC2YT6I0e6hHVVhGBNw5xyy8-cnYy_Q4Q0h8Nb48wHHaQQFE_LIUmIPGQqwxlgzT_7Vxg1qS-HtsopVrRQ001QP20VAgGY0CDgQi9qBaRhROolEgi1-tz_v5oCBCp4CbI6TBksjUGDOayf7mIMPQV1POABck7GBOkRFaeG-5k7umOihYjtRqq2zJVXlv2MyQyjUUn4rLLuRPIMkZjWXW1ffOVfx7rVikcCquw_i5SoGPJIVB0cHNNL3oEZaF6GqO5xHARkp0edTw"
+                  icon="🎁"
+                  title="The Surprise"
+                  subtitle="For the next life, maybe..."
+                  description="A gift from my heart to yours"
+                  onClick={() => navigateToSection('surprise')}
+                  gradient="from-teal-500/20 to-cyan-500/20"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 
-  const MobileCard = ({ image, icon, title, subtitle, description, onClick }: {
+  const RomanticCard = ({ image, icon, title, subtitle, description, onClick, gradient }: {
     image: string;
     icon: string;
     title: string;
     subtitle: string;
     description: string;
     onClick: () => void;
+    gradient: string;
   }) => (
     <div
       onClick={onClick}
-      className="bg-white rounded-2xl overflow-hidden cursor-pointer transform hover:scale-[1.02] transition-all duration-300 active:scale-[0.98] shadow-lg hover:shadow-xl"
+      className="group cursor-pointer transform hover:scale-[1.02] transition-all duration-500 active:scale-[0.98] relative"
     >
-      {/* Image */}
-      <div className="h-48 bg-gradient-to-br from-pink-200 to-orange-200 relative overflow-hidden">
-        <img 
-          src={image} 
-          alt={title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-      </div>
+      {/* Glow effect */}
+      <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 scale-110`}></div>
       
-      {/* Content */}
-      <div className="p-4">
-        <div className="flex items-start gap-3 mb-2">
-          <span className="text-lg">{icon}</span>
-          <div className="flex-1">
-            <h3 className="text-gray-800 font-medium text-base leading-tight mb-1">
-              {title} – {subtitle}
+      {/* Card content */}
+      <div className="bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 shadow-2xl group-hover:shadow-3xl transition-all duration-500">
+        {/* Image section */}
+        <div className="h-48 sm:h-56 relative overflow-hidden">
+          <img 
+            src={image} 
+            alt={title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+          
+          {/* Icon overlay */}
+          <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+            <span className="text-2xl">{icon}</span>
+          </div>
+        </div>
+        
+        {/* Content section */}
+        <div className="p-6">
+          <div className="space-y-2">
+            <h3 className="text-white font-semibold text-lg leading-tight group-hover:text-pink-200 transition-colors duration-300">
+              {title}
             </h3>
-            <p className="text-gray-400 text-sm">{description}</p>
+            <p className="text-white/80 text-sm font-medium">
+              {subtitle}
+            </p>
+            <p className="text-white/60 text-sm italic leading-relaxed">
+              {description}
+            </p>
+          </div>
+          
+          {/* Hover indicator */}
+          <div className="mt-4 flex items-center text-white/50 text-xs group-hover:text-pink-200 transition-colors duration-300">
+            <span>Tap to explore</span>
+            <ChevronRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
           </div>
         </div>
       </div>
@@ -512,9 +592,9 @@ Forever yours in a heart that never stopped loving,
           {/* Photo 1 */}
           <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src="/wishes/image.png"
+              src="/wishes/image.png" 
               alt="Memory" 
-              className="w-full h-50 object-cover rounded-lg mb-4"
+              className="w-full h-48 object-cover rounded-lg mb-4"
             />
             <p className="text-sm sm:text-base text-gray-600 italic text-center">
               I smiled every time I saw this.
@@ -524,9 +604,9 @@ Forever yours in a heart that never stopped loving,
           {/* Photo 2 */}
           <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src="/wishes/myfavourite.png"
+              src="/wishes/myfavourite.png" 
               alt="Memory" 
-              className="w-full h-50 object-cover rounded-lg mb-4"
+              className="w-full h-48 object-cover rounded-lg mb-4"
             />
             <p className="text-sm sm:text-base text-gray-600 italic text-center">
               My favorite moment — even if you never knew.
@@ -536,9 +616,9 @@ Forever yours in a heart that never stopped loving,
           {/* Photo 3 */}
           <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src="/wishes/art.png"
+              src="/wishes/art.png" 
               alt="Memory" 
-              className="w-full h-50 object-cover rounded-lg mb-4"
+              className="w-full h-48 object-cover rounded-lg mb-4"
             />
             <p className="text-sm sm:text-base text-gray-600 italic text-center">
               You were always art to me.
@@ -548,9 +628,9 @@ Forever yours in a heart that never stopped loving,
           {/* Photo 4 */}
           <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src="/wishes/coldnights.png"
+              src="/wishes/coldnights.png" 
               alt="Memory" 
-              className="w-full h-50 object-cover rounded-lg mb-4"
+              className="w-full h-48 object-cover rounded-lg mb-4"
             />
             <p className="text-sm sm:text-base text-gray-600 italic text-center">
               This memory kept me warm on cold nights.
