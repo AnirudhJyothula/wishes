@@ -10,9 +10,9 @@ export const SongsScreen: React.FC<SongsScreenProps> = ({ onNavigateHome }) => {
   const audioRefs = useRef<(HTMLAudioElement | null)[]>([]);
 
   const songs = [
-    { title: "You Are the Reason", caption: "Because you truly were.", audioFile: `${process.env.PUBLIC_URL}/songs/sita.mp3` },
-    { title: "Perfect", caption: "Because I imagined our first dance.", audioFile: `${process.env.PUBLIC_URL}/songs/Kumkumala.mp3` },
-    { title: "Dream", caption: "Because you made life beautiful.", audioFile: `${process.env.PUBLIC_URL}/songs/PremaVelluva.mp3` }
+    { title: "You Are the Reason", caption: "Because you truly were.", audioFile: "/wishes/songs/sita.mp3" },
+    { title: "Perfect", caption: "Because I imagined our first dance.", audioFile: "/wishes/songs/Kumkumala.mp3" },
+    { title: "Dream", caption: "Because you made life beautiful.", audioFile: "/wishes/songs/PremaVelluva.mp3" }
   ];
 
   const handlePlayPause = (index: number) => {
